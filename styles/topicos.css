@@ -1,0 +1,69 @@
+.tópicos {
+    background: var(--azul-degrade);
+    text-align: center;
+    padding: 4em 2em; /* Aumentei o padding para um espaçamento mais confortável */
+    border-radius: 15px; /* Borda arredondada para suavizar o visual */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adicionada uma sombra sutil para destacar a seção */
+}
+
+.tópicos__titulo {
+    color: var(--branco);
+    font-weight: 400;
+    margin-bottom: 2em; /* Aumentei o espaçamento inferior para dar mais respiro */
+    font-size: 24px; /* Aumentei um pouco o tamanho da fonte do título para destaque */
+    letter-spacing: 1px; /* Adicionado espaçamento entre as letras para um toque mais estilizado */
+}
+
+.tópicos__lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em; /* Aumentei o espaçamento entre os itens */
+    padding: 0 1em; /* Ajuste de espaçamento lateral */
+}
+
+.tópicos__item {
+    margin: 0; /* Removi o espaçamento vertical para evitar grandes intervalos entre os itens */
+}
+
+/* Estilo do link (botão) */
+.tópicos__link {
+    color: var(--branco);
+    padding: 1.5em 3em; /* Aumentei o padding para um link maior e mais fácil de clicar */
+    background-color: var(--laranja);
+    text-decoration: none;
+    font-size: 18px; /* Aumentei o tamanho da fonte para maior legibilidade */
+    font-weight: 700;
+    border-radius: 30px; /* Bordas arredondadas mais suaves para os links */
+    transition: all 0.3s ease; /* Transição suave para hover */
+    display: inline-block; /* Para os links se comportarem como botões */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para dar destaque */
+}
+
+/* Efeito de hover nos links */
+.tópicos__link:hover {
+    background-color: var(--azul); /* Alteração da cor de fundo no hover */
+    color: var(--branco); /* Mudança da cor do texto para branco no hover */
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra mais forte no hover */
+}
+
+/* Responsividade: ajustes para telas menores */
+@media (max-width: 768px) {
+    .tópicos__lista {
+        flex-direction: column; /* Coloca os itens em coluna em telas pequenas */
+        gap: 1.5em; /* Reduz o espaçamento entre os itens em dispositivos móveis */
+    }
+
+    .tópicos__link {
+        width: 100%; /* Os links agora ocupam toda a largura disponível */
+        padding: 1.2em 0; /* Ajusta o padding para telas menores */
+        font-size: 16px; /* Reduz o tamanho da fonte para dispositivos móveis */
+        text-align: center; /* Centraliza o texto nos links */
+    }
+
+    .tópicos__titulo {
+        font-size: 20px; /* Tamanho menor para o título em telas pequenas */
+        margin-bottom: 1.5em; /* Ajusta o espaçamento inferior para telas pequenas */
+    }
+}

@@ -1,0 +1,142 @@
+/* Estilo do ícone de menu (hambúrguer) */
+.cabeçalho__menu-hamburguer {
+    width: 30px; /* Tamanho ajustado para boa visibilidade */
+    height: 30px;
+    display: inline-block;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease, rotate 0.3s ease; /* Adicionando animação de rotação */
+}
+
+.cabeçalho__menu-hamburguer:hover {
+    transform: scale(1.1); /* Aumento do ícone ao passar o mouse */
+}
+
+/* Estilo da barra de cabeçalho */
+.cabeçalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1em 2em; /* Ajuste do padding para espaçamento extra */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Container que segura os itens do cabeçalho */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Garante que os itens sejam distribuídos */
+    width: 100%;
+}
+
+/* Imagens dentro do container (ajustadas para o tamanho do cabeçalho) */
+.container__imagem {
+    padding: 0.8em; /* Ajuste de padding para não sobrecarregar o cabeçalho */
+}
+
+/* Estilo do menu, inicialmente oculto */
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0; /* Ajuste do menu para alinhar à direita */
+    width: 100vw; /* Ocupa toda a largura da tela */
+    background-color: var(--branco);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    border-radius: 10px;
+    z-index: 9999; /* Garante que o menu fique acima de outros elementos */
+    animation: slideDown 0.5s ease; /* Animação para abrir o menu */
+}
+
+/* Animação de deslizar do menu */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Exibe o menu quando o checkbox está marcado */
+.container__botao:checked ~ .lista-menu {
+    display: block;
+}
+
+/* Estilo para o título do menu */
+.lista-menu__titulo {
+    padding: 1em;
+    color: var(--laranja);
+    font-weight: 700;
+    background-color: var(--branco);
+    border-bottom: 1px solid #ddd; /* Linha separadora mais suave */
+    text-align: center; /* Centraliza o título */
+}
+
+/* Estilo dos itens do menu */
+.lista-menu__item {
+    padding: 1em;
+    background-color: var(--branco);
+    transition: background-color 0.3s ease; /* Transição suave de fundo ao passar o mouse */
+}
+
+/* Hover nos itens do menu */
+.lista-menu__item:hover {
+    background-color: var(--laranja); /* Fundo laranja ao passar o mouse */
+}
+
+/* Estilo dos links dentro do menu */
+.lista-menu__link {
+    color: var(--azul);
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Esconde o botão de controle do menu (checkbox) */
+.container__botao {
+    display: none;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    /* Ajusta o menu para telas pequenas, como celulares */
+    .lista-menu {
+        width: 85vw; /* Menor largura para dispositivos móveis */
+        right: 7.5vw; /* Espaçamento à direita */
+    }
+
+    .container__menu {
+        display: flex;
+        justify-content: space-between;
+        width: 100%; /* Ajusta a largura do container */
+    }
+
+    .container__imagem {
+        padding: 0.5em; /* Ajuste do padding das imagens para melhor adaptação */
+    }
+
+    /* Animação do ícone de menu para telas pequenas */
+    .cabeçalho__menu-hamburguer {
+        transition: transform 0.3s ease, rotate 0.3s ease; /* Mantém a animação suave */
+    }
+
+    /* Abertura do menu em dispositivos móveis (caso seja necessário adaptar a estrutura) */
+    .lista-menu__item {
+        padding: 1.2em;
+    }
+
+    /* Estilo do título no menu */
+    .lista-menu__titulo {
+        font-size: 1.2rem; /* Ajuste do tamanho do título */
+    }
+}

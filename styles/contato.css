@@ -1,0 +1,84 @@
+/* Estilo geral da seção de contato */
+.contato {
+    background-color: var(--branco);
+    padding: 3em 2em; /* Aumentado o padding para dar mais espaço interno */
+    border-radius: 15px; /* Bordas mais arredondadas para um visual mais suave */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada para destacar a seção */
+    max-width: 800px; /* Limita a largura máxima para manter o design organizado */
+    margin: 2em auto; /* Centraliza a seção e dá espaço nas laterais */
+}
+
+/* Título e texto dentro da seção de contato */
+.contato__titulo,
+.contato__texto {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block; /* Garante que o texto ocupe toda a largura disponível */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo do título de contato */
+.contato__titulo {
+    font-size: 2.5rem; /* Tamanho aumentado para maior destaque */
+    font-weight: 700; /* Título com mais peso para destaque */
+    margin-bottom: 1em; /* Espaçamento inferior maior */
+    letter-spacing: 1px; /* Aumentado o espaçamento entre letras para estilizar o título */
+}
+
+/* Estilo do texto explicativo dentro de contato */
+.contato__texto {
+    font-size: 1.2rem; /* Tamanho de fonte ajustado para melhorar legibilidade */
+    font-weight: 300;
+    margin: 1em 0;
+    text-align: center; /* Centraliza o texto */
+    color: var(--azul); /* Cor de texto mais suave para contraste */
+}
+
+/* Estilo do campo de email */
+.contato__email {
+    padding: 1em 2.5em; /* Mais espaço ao redor do texto para maior conforto */
+    border: 2px solid var(--azul);
+    border-radius: 30px; /* Bordas mais arredondadas para suavizar o design */
+    width: 100%; /* Ajuste para garantir que ocupe toda a largura possível */
+    color: var(--azul);
+    background-color: #f1f1f1; /* Fundo mais suave para o campo */
+    font-size: 1rem;
+    margin-top: 1.5em; /* Espaçamento entre o texto e o campo de entrada */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+/* Efeito de foco no campo de e-mail */
+.contato__email:focus {
+    border-color: var(--laranja); /* Cor de borda ao focar no campo */
+    box-shadow: 0 0 8px rgba(235, 155, 0, 0.5); /* Efeito de sombra suave ao focar */
+    outline: none; /* Remove o outline padrão do navegador */
+}
+
+/* Estilo do texto dentro do campo de e-mail */
+.contato__email::placeholder {
+    font-family: var(--fonte-principal);
+    color: var(--azul-claro); /* Cor mais clara para o texto do placeholder */
+    background: url("../img/Email.svg") no-repeat 5%; /* Ícone dentro do campo */
+    background-size: 1.2em; /* Ajustado o tamanho do ícone */
+    padding-left: 3.5em; /* Mais espaço para o ícone da lupa */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .contato__titulo {
+        font-size: 1.8rem; /* Tamanho reduzido do título para telas pequenas */
+        margin-bottom: 0.5em;
+    }
+
+    .contato__texto {
+        font-size: 1rem; /* Ajustado para não ficar muito grande em telas menores */
+    }
+
+    .contato__email {
+        width: 100%; /* Garante que o campo ocupe toda a largura em telas pequenas */
+        padding: 1em 1.5em; /* Menos padding para melhorar a responsividade */
+        margin-top: 1em; /* Menos espaçamento superior em telas pequenas */
+    }
+}
